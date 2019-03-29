@@ -1,0 +1,153 @@
+﻿<ManagementPack ContentReadable="true" SchemaVersion="2.0" OriginalSchemaVersion="1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <Manifest>
+    <Identity>
+      <ID>BI.WorkItem.ConsoleTask.ConvertWI</ID>
+      <Version>1.0.2016.3</Version>
+    </Identity>
+    <Name>BI.WorkItem.ConsoleTask.ConvertWI</Name>
+    <References>
+      <Reference Alias="System">
+        <ID>System.Library</ID>
+        <Version>7.5.8501.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="Console">
+        <ID>Microsoft.EnterpriseManagement.ServiceManager.UI.Console</ID>
+        <Version>7.5.1561.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="EnterpriseManagement">
+        <ID>Microsoft.EnterpriseManagement.ServiceManager.UI.Administration</ID>
+        <Version>7.5.3079.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="CoreServiceRequest">
+        <ID>System.WorkItem.ServiceRequest.Library</ID>
+        <Version>7.5.0.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="CoreIncident">
+        <ID>System.WorkItem.Incident.Library</ID>
+        <Version>7.5.0.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="Incident">
+        <ID>ServiceManager.IncidentManagement.Library</ID>
+        <Version>7.5.1561.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="ServiceRequest">
+        <ID>ServiceManager.ServiceRequest.Library</ID>
+        <Version>7.5.1561.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="SystemCenter1">
+        <ID>Microsoft.SystemCenter.Library</ID>
+        <Version>7.0.8433.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="SystemCenter">
+        <ID>Microsoft.SystemCenter.Subscriptions</ID>
+        <Version>7.5.3079.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="SylianceResourcesImages">
+        <ID>Syliance.Resources.Images</ID>
+        <Version>1.0.0.1</Version>
+        <PublicKeyToken>ba0c09c599f9f764</PublicKeyToken>
+      </Reference>
+    </References>
+  </Manifest>
+  <Categories>
+    <Category ID="BI.WorkItem.ConsoleTask.ConvertWI.Category" Value="Console!Microsoft.EnterpriseManagement.ServiceManager.ManagementPack">
+      <ManagementPackName>BI.WorkItem.ConsoleTask.ConvertWI</ManagementPackName>
+      <ManagementPackVersion>1.0.0.0</ManagementPackVersion>
+      <ManagementPackPublicKeyToken>66061d3b552d77a4</ManagementPackPublicKeyToken>
+    </Category>
+    <Category ID="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ConvertIRGroup.DoNotShowInConsole.Category" Target="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ConvertIRGroup" Value="Console!Microsoft.EnterpriseManagement.ServiceManager.UI.Console.DonotShowConsoleTask" />
+    <Category ID="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ConvertIRToSR.DoNotShowInConsole.Category" Target="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ConvertIRToSR" Value="Console!Microsoft.EnterpriseManagement.ServiceManager.UI.Console.DonotShowConsoleTask" />
+    <Category ID="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ResolveIRToSR.DoNotShowInConsole.Category" Target="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ResolveIRToSR" Value="Console!Microsoft.EnterpriseManagement.ServiceManager.UI.Console.DonotShowConsoleTask" />
+    <Category ID="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ResolveIRToSR.DoNotShowInForm.Category" Target="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ResolveIRToSR" Value="Console!Microsoft.EnterpriseManagement.ServiceManager.UI.Console.DonotShowFormTask" />
+    <Category ID="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ConvertSRGroup.DoNotShowInConsole.Category" Target="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ConvertSRGroup" Value="Console!Microsoft.EnterpriseManagement.ServiceManager.UI.Console.DonotShowConsoleTask" />
+    <Category ID="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ConvertSRToIR.DoNotShowInConsole.Category" Target="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ConvertSRToIR" Value="Console!Microsoft.EnterpriseManagement.ServiceManager.UI.Console.DonotShowConsoleTask" />
+  </Categories>
+  <Monitoring>
+  </Monitoring>
+  <Presentation>
+    <ConsoleTasks>
+      <ConsoleTask ID="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ConvertIRGroup" Accessibility="Public" Enabled="true" Target="CoreIncident!System.WorkItem.Incident" RequireOutput="false">
+        <Assembly>Console!SdkDataAccessAssembly</Assembly>
+        <Handler>Microsoft.EnterpriseManagement.UI.SdkDataAccess.ConsoleTaskHandler</Handler>
+        <Parameters>
+          <Argument Name="IsGroupTask">True</Argument>
+        </Parameters>
+      </ConsoleTask>
+      <ConsoleTask ID="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ConvertIRToSR" Accessibility="Public" Enabled="true" Target="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ConvertIRGroup" RequireOutput="false">
+        <Assembly>Console!SdkDataAccessAssembly</Assembly>
+        <Handler>Microsoft.EnterpriseManagement.UI.SdkDataAccess.ConsoleTaskHandler</Handler>
+        <Parameters>
+          <Argument Name="Assembly">BI.WorkItem.ConsoleTask.ConvertWI</Argument>
+          <Argument Name="Type">BI.WorkItem.ConsoleTask.ConvertWI.Tasks.ConvertIRSRTaskHandler</Argument>
+        </Parameters>
+      </ConsoleTask>
+      <ConsoleTask ID="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ResolveIRToSR" Accessibility="Public" Enabled="true" Target="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ConvertIRGroup" RequireOutput="false">
+        <Assembly>Console!SdkDataAccessAssembly</Assembly>
+        <Handler>Microsoft.EnterpriseManagement.UI.SdkDataAccess.ConsoleTaskHandler</Handler>
+        <Parameters>
+          <Argument Name="Assembly">BI.WorkItem.ConsoleTask.ConvertWI</Argument>
+          <Argument Name="Type">BI.WorkItem.ConsoleTask.ConvertWI.Tasks.ConvertIRSRTaskHandler</Argument>
+          <Argument Name="TemplateID">442cb43d-1003-854e-4f92-3289c69cd813</Argument>
+        </Parameters>
+      </ConsoleTask>
+      <ConsoleTask ID="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ConvertSRGroup" Accessibility="Public" Enabled="true" Target="CoreServiceRequest!System.WorkItem.ServiceRequest" RequireOutput="false">
+        <Assembly>Console!SdkDataAccessAssembly</Assembly>
+        <Handler>Microsoft.EnterpriseManagement.UI.SdkDataAccess.ConsoleTaskHandler</Handler>
+        <Parameters>
+          <Argument Name="IsGroupTask">True</Argument>
+        </Parameters>
+      </ConsoleTask>
+      <ConsoleTask ID="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ConvertSRToIR" Accessibility="Public" Enabled="true" Target="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ConvertSRGroup" RequireOutput="false">
+        <Assembly>Console!SdkDataAccessAssembly</Assembly>
+        <Handler>Microsoft.EnterpriseManagement.UI.SdkDataAccess.ConsoleTaskHandler</Handler>
+        <Parameters>
+          <Argument Name="Assembly">BI.WorkItem.ConsoleTask.ConvertSRtoIR</Argument>
+          <Argument Name="Type">BI.WorkItem.ConsoleTask.ConvertWI.Tasks.ConvertSRIRTaskHandler</Argument>
+        </Parameters>
+      </ConsoleTask>
+    </ConsoleTasks>
+    <ImageReferences>
+      <ImageReference ElementID="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ConvertIRGroup" ImageID="SylianceResourcesImages!Syliance_arrow_right_green_16" />
+      <ImageReference ElementID="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ConvertIRToSR" ImageID="SylianceResourcesImages!Syliance_cube_green_new_16" />
+      <ImageReference ElementID="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ResolveIRToSR" ImageID="SylianceResourcesImages!Syliance_element_new_after_16" />
+      <ImageReference ElementID="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ConvertSRGroup" ImageID="SylianceResourcesImages!Syliance_arrow_right_green_16" />
+      <ImageReference ElementID="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ConvertSRToIR" ImageID="SylianceResourcesImages!Syliance_cube_green_new_16" />
+    </ImageReferences>
+  </Presentation>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="BI.WorkItem.ConsoleTask.ConvertWI">
+          <Name>BI WorkItem Convert IR SR Library</Name>
+        </DisplayString>
+        <DisplayString ElementID="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ConvertIRGroup">
+          <Name>Convert [IR] To --&gt; [SR]</Name>
+        </DisplayString>
+        <DisplayString ElementID="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ConvertIRToSR">
+          <Name>Convert [IR] and create [SR]</Name>
+        </DisplayString>
+        <DisplayString ElementID="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ResolveIRToSR">
+          <Name>Resolve [IR] after convert</Name>
+        </DisplayString>
+        <DisplayString ElementID="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ConvertSRGroup">
+          <Name>Convert [SR] To --&gt; [IR]</Name>
+        </DisplayString>
+        <DisplayString ElementID="BI.WorkItem.ConsoleTask.ConvertWI.ConsoleTask.ConvertSRToIR">
+          <Name>Convert [SR] and create [IR]</Name>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+  </LanguagePacks>
+  <Resources>
+    <Assembly ID="BI.WorkItem.ConsoleTask.ConvertWI.Assembly" Accessibility="Public" FileName="BI.WorkItem.ConsoleTask.ConvertWI.dll" HasNullStream="false" QualifiedName="BI.WorkItem.ConsoleTask.ConvertWI" />
+  </Resources>
+</ManagementPack>
